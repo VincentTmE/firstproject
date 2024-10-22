@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AppAnotherComponent } from "./app-another/app-another.component";
+import { privateDecrypt } from 'crypto';
+import { MatCommonModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { LogChartComponent } from "./log-chart/log-chart.component";
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-root',
+  templateUrl: "app.component.html",
+  
+  styleUrls: ['./app.component.css'],
+  imports: [MatSidenavModule, MatSlideToggleModule, MatCommonModule, AppAnotherComponent, LogChartComponent],
 })
 export class AppComponent {
-  title = 'firstproject';
+  
 }
