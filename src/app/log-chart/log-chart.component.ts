@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, input } from '@angular/core';
+import { Component, AfterViewInit, input, AfterContentChecked } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 
 
@@ -16,7 +16,7 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   styleUrls: ['./log-chart.component.css']  // Make sure the correct key is styleUrls (plural)
 })
 
-export class LogChartComponent  implements AfterViewInit {
+export class LogChartComponent  implements AfterContentChecked{
   myChart: echarts.EChartsOption | null = null; // Store the chart instance
   isLogDisplayed: boolean = false
 
@@ -24,7 +24,7 @@ export class LogChartComponent  implements AfterViewInit {
   
 
   // This method runs after the component's view is initialized
-  ngAfterViewInit(): void {
+  ngAfterContentChecked(): void {
     // Make sure the DOM element is available after the view is initialize
    
   this.chartOption  = {
@@ -55,8 +55,7 @@ export class LogChartComponent  implements AfterViewInit {
           {
             data: [150, 230, 224, 218, 135, 147, 260],
             type: 'line'
-          }
-        ]
+          } ]
       }
     }
     
