@@ -1,5 +1,5 @@
 <!-- log-chart.component.html -->
-<div id="main" style="width: 600px; height: 400px;" echarts [options]="chartOption">
+<div id="main" style="width: 600px; height: 400px;" echarts [options]="chartOption" [merge]="updateOptions" >
 </div>
 <button (click)="onSwitchFreqView()">
     <span> 
