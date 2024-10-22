@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, input } from '@angular/core';
-import * as echarts from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+
 
 
 
@@ -8,12 +9,13 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   selector: 'app-log-chart',
   standalone: true,
   imports: [
-    
+    CommonModule,
+    NgxEchartsDirective
   ],
- providers : [ ],
   templateUrl: './log-chart.component.html',
   styleUrls: ['./log-chart.component.css']  // Make sure the correct key is styleUrls (plural)
 })
+
 export class LogChartComponent  implements AfterViewInit {
   myChart: echarts.EChartsOption | null = null; // Store the chart instance
   isLogDisplayed: boolean = false
@@ -24,8 +26,8 @@ export class LogChartComponent  implements AfterViewInit {
   // This method runs after the component's view is initialized
   ngAfterViewInit(): void {
     // Make sure the DOM element is available after the view is initialize
-    
-   let chartOption  = {
+   
+  this.chartOption  = {
       xAxis: {
         type: 'category',
         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -41,7 +43,7 @@ export class LogChartComponent  implements AfterViewInit {
       ]
     };
     if (this.isLogDisplayed) {
-      this.chartOption = {
+        this.chartOption = {
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -57,7 +59,7 @@ export class LogChartComponent  implements AfterViewInit {
         ]
       }
     }
-
+    
   }
   onSwitchFreqView() {
     this.isLogDisplayed = !this.isLogDisplayed 

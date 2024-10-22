@@ -24,6 +24,7 @@
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.6",
     "echarts": "^5.5.1",
+    "echarts-for-angular": "^0.4.0",
     "express": "^4.18.2",
     "ngx-echarts": "^18.0.0",
     "rxjs": "~7.8.0",

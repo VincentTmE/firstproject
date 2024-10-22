@@ -1,14 +1,9 @@
 <!-- log-chart.component.html -->
-<div id="main" style="width: 600px; height: 400px;"
-
-
-
->
-
+<div id="main" style="width: 600px; height: 400px;" echarts [options]="chartOption">
 </div>
 <button (click)="onSwitchFreqView()">
     <span> 
-        {{ isLogDisplayed ?  'Linear' : ' Logaritmic'}}
+        {{ isLogDisplayed ?  'Linear' : ' Logaritmic' }}
     </span>
 
 </button> 
